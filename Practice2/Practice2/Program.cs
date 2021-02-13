@@ -103,12 +103,13 @@ namespace Practice2
             //return letter == 'a' || letter == 'e' || letter == 'o' || letter == 'i' || letter == 'u';
 
             // Using switch expression
-            //return letter switch
+            //bool isVowel = letter switch
             //{
             //    'a' => true,
             //    'e' => true,
             //    _ => false
             //};
+            //return isVowel;
         }
 
         /* "Hello world"
