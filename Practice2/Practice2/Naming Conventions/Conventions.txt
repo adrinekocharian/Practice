@@ -1,0 +1,77 @@
+﻿The code should be more human-readable and understanable. 
+
+Variable name Conventions
+
+* Variable names can contain alphanumeric characters and the underscore character. 
+  Special characters like the pound #, the dash -, and the dollar sign $ are not allowed.
+* Variable names must begin with an alphabetical letter or an underscore, not a number. 
+  Developers use the underscore for a special purpose, so try to not use that for now.
+* Variable names must NOT be a C# keyword. For example, these variable name declarations won't be allowed: float float; or string string;.
+* Variable names are case-sensitive, meaning that string MyValue; and string myValue; are two different variables.
+* Variable names should use camel case, which is a style of writing that uses a lower-case letter at the beginning of the first word and an upper-case letter at the beginning of each subsequent word. 
+  For example: string thisIsCamelCase;.
+* Variable names should be descriptive and meaningful in your application. 
+  Choose a name for your variable that represents the kind of data it will hold.
+* Variable names shouldn't include the data type of the variable. For example string strValue; is not advised to use.
+
+
+Commenting Conventions
+
+Comments should be meaningful.
+* Place comment on a separate line, not at the end of a line of code.
+* Begin comment text with an uppercase letter.
+* End comment text with a period.		
+* Insert one space between the comment delimiter (//) and the comment text, as shown in the following example.
+  // The following declaration creates a query. It does not run
+  // the query.
+
+Layout Conventions
+
+Verical and horizontal spacing of the code helps to make code more readable and understandable.
+
+* Only one statement per line.
+* Only one decalration per line.
+* At least one blank line between method definitions and property definitions.
+* One blank line between methods.
+* Continuation lines should be indenteed one tab stop (four spaces).
+
+* Use parenthese to make clauses (if, for, while, foreach) in an expression apparent, example:
+	if (val > val2)
+	{
+		//
+	}
+* get/set properties can have paranthesis on the same line
+    public string MyProperty { get; set; }
+
+String concatentation
+ -- with '+' operator only if multi-line required
+			stirng mystring = "A" 
+				+ "B"
+				+ "C";
+ -- string interpolation
+			int number = 3;
+			string example = "My string" + number.ToString();
+			string example = $"My preferred string {number}";
+ -- StringBuilder in loops
+	var stringBuilder = new StringBuilder();
+	for (int i = 0; i < 7; i++)
+	{
+		stringBuilder.Append(i);
+	}
+	var result = stringBuilder.ToString();
+
+
+Usage of var keyword
+
+* Use implicit typing for local variables when the type of the variable is obvious from the right side of the assignment, 
+  or when the precise type is not important.
+		    var var1 = "This is clearly a string.";
+			var var2 = 27;
+* Do not use var when the type is not apparent from the right side of the assignment.	
+	    	int var4 = ExampleClass.ResultSoFar();
+	    
+* implicit typing in for statement
+* explicit typing in foreach statement
+
+
+
