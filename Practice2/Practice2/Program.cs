@@ -89,16 +89,26 @@ namespace Practice2
             return result.ToString();
         }
 
-        static bool IsVowel(char el)
+        static bool IsVowel(char letter)
         {
-            if (el == 'a' || el == 'e' || el == 'o' || el == 'i' || el == 'u')
+            if (letter == 'a' || letter == 'e' || 
+                letter == 'o' || letter == 'i' || 
+                letter == 'u')
             {
                 return true;
             }
             return false;
 
             // Another option.
-            //return el == 'a' || el == 'e' || el == 'o' || el == 'i' || el == 'u';
+            //return letter == 'a' || letter == 'e' || letter == 'o' || letter == 'i' || letter == 'u';
+
+            // Using switch expression
+            //return letter switch
+            //{
+            //    'a' => true,
+            //    'e' => true,
+            //    _ => false
+            //};
         }
 
         /* "Hello world"
