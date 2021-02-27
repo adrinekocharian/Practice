@@ -10,19 +10,21 @@ namespace Practice3
         public int height;
 
         public Point topLeftPoint;
-        //public Point bottomRight;
+        public Point bottomRight;
 
         public Rectangle(int w, int h)
         {
             this.width = w;
             this.height = h;
             this.topLeftPoint = new Point(0, 0);
+            this.bottomRight = new Point(width, height);
         }
         public Rectangle(int w, int h, Point topLeft)
         {
             this.width = w;
             this.height = h;
             this.topLeftPoint = topLeft;
+            this.bottomRight = new Point(topLeft.X + w, topLeft.Y + h);
         }
 
         public int CalculateArea()
@@ -30,16 +32,15 @@ namespace Practice3
             return this.width * this.height;
         }
 
-        public bool IsOverlapping(Rectangle rectangle)
+        public bool IsOverlapping(Rectangle rect)
         {
-            //if ((rectangle.topLeftPoint.X >= this.topLeftPoint.X && rectangle.topLeftPoint.X <= this.topLeftPoint.X + this.width)
-            //    || (rectangle.topLeftPoint.Y >= this.topLeftPoint.Y && rectangle.topLeftPoint.Y <= this.topLeftPoint.Y + this.height))
-            //{
-            //    return true;
-            //}
-            //else if((rectangle.topLeftPoint.Y >= this.topLeftPoint.Y && rectangle.topLeftPoint.Y <= this.topLeftPoint.Y + this.height)
-            //    && rectangle.height + rectangle.topLeftPoint.Y )
-            return false;
+            if (rect.topLeftPoint.X > this.bottomRight.X || this.topLeftPoint.X > rect.bottomRight.X)
+                return false;
+
+            if (rect.topLeftPoint.Y > this.bottomRight.Y || this.topLeftPoint.Y > rect.bottomRight.Y)
+                return false;
+
+            return true;
         }
     }
 }
