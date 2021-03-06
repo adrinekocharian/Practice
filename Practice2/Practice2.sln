@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Practice2", "Practice2\Prac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Practice3", "Practice3\Practice3.csproj", "{E6024A58-221E-4AB9-9A60-EF78AA9D182D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice4", "Practice4\Practice4.csproj", "{B0E823B2-BFE2-440A-BD3B-8E0850FDC4A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Practice4", "Practice4\Practice4.csproj", "{B0E823B2-BFE2-440A-BD3B-8E0850FDC4A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastTypes", "CastTypes\CastTypes.csproj", "{8561F7B5-24E7-49D5-9B77-4400D5BA9276}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CastTypes", "CastTypes\CastTypes.csproj", "{8561F7B5-24E7-49D5-9B77-4400D5BA9276}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice5", "Practice5\Practice5.csproj", "{96A6691E-6B7F-492A-AC03-3B8F16463BAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{8561F7B5-24E7-49D5-9B77-4400D5BA9276}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8561F7B5-24E7-49D5-9B77-4400D5BA9276}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8561F7B5-24E7-49D5-9B77-4400D5BA9276}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96A6691E-6B7F-492A-AC03-3B8F16463BAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96A6691E-6B7F-492A-AC03-3B8F16463BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96A6691E-6B7F-492A-AC03-3B8F16463BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96A6691E-6B7F-492A-AC03-3B8F16463BAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

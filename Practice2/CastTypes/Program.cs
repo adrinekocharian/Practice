@@ -50,6 +50,11 @@ namespace CastTypes
         static void FeedAnimal(Mammal animal)
         {
             var isCat = animal is Cat;
+            if (isCat)
+            {
+                var a = animal as Cat;
+                a.Meow();
+            }
             var cat = animal as Cat;
             var dog = animal as Dog;
             var lion = animal as Lion;
