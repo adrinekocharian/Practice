@@ -1,16 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace LINQ
 {
     public class ChessPlayer
     {
-        public string FirstName { get; set; }
+        private int birthYear;
+        public int BirthYear
+        {
+            get
+            {
+                //Console.WriteLine(birthYear);
+                return this.birthYear;
+            }
+
+            set
+            {
+                this.birthYear = value;
+            }
+        }
+
 
         public string LastName { get; set; }
 
-        public int BirthYear { get; set; }
+        public string FirstName { get; set; }
 
         public int Rating { get; set; }
 
@@ -114,7 +129,7 @@ namespace LINQ
                     BirthYear = 1990,
                     FirstName = "Sergey",
                     LastName = "Karjakin",
-                    Rating = 2757,
+                    Rating = 2789,
                     Country = "RUS"
                 },
                 new ChessPlayer()
@@ -126,7 +141,6 @@ namespace LINQ
                     Rating = 2789,
                     Country = "RUS"
                 },
-
                 new ChessPlayer()
                 {
                     Id = 12,
@@ -146,6 +160,20 @@ namespace LINQ
                     Country = "ARM"
                 },
             };
+        }
+    }
+
+    //TODO Define when two chess players are equal
+    public class ChessPlayerComparer : IEqualityComparer<ChessPlayer>
+    {
+        public bool Equals([AllowNull] ChessPlayer x, [AllowNull] ChessPlayer y)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetHashCode([DisallowNull] ChessPlayer obj)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -14,6 +14,7 @@ namespace LINQ
                 new Team { Name = "Barcelona", Country ="Spain" },
                 new Team() {Name="Juventus", Country = "Italy"}
             };
+
             List<Player> players = new List<Player>()
             {
                 new Player {Name="Messy", Team="Barcelona"},
@@ -22,7 +23,7 @@ namespace LINQ
                 new Player {Name="Buffon", Team="Juventus"}
             };
 
-            //TODO
+            //TODO Football 
             //Return all players from each football club.
         }
     }
