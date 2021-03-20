@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CastTypes", "CastTypes\Cast
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Practice5", "Practice5\Practice5.csproj", "{96A6691E-6B7F-492A-AC03-3B8F16463BAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice6", "Practice6\Practice6.csproj", "{3687CF2D-CF18-4151-8F78-42222E32B38A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Practice6", "Practice6\Practice6.csproj", "{3687CF2D-CF18-4151-8F78-42222E32B38A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaShop", "PizzaShop\PizzaShop.csproj", "{4AA820E8-F6A9-44BD-87E7-912618F1D712}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaShop", "PizzaShop\PizzaShop.csproj", "{4AA820E8-F6A9-44BD-87E7-912618F1D712}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ", "LINQ\LINQ.csproj", "{2BFF914F-0659-4390-992B-6ED9EAC1CE4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{4AA820E8-F6A9-44BD-87E7-912618F1D712}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AA820E8-F6A9-44BD-87E7-912618F1D712}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AA820E8-F6A9-44BD-87E7-912618F1D712}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BFF914F-0659-4390-992B-6ED9EAC1CE4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BFF914F-0659-4390-992B-6ED9EAC1CE4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BFF914F-0659-4390-992B-6ED9EAC1CE4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BFF914F-0659-4390-992B-6ED9EAC1CE4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
