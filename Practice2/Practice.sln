@@ -21,11 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LINQ", "LINQ\LINQ.csproj", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bank Account", "Bank Account", "{6C9D96D2-1DFC-4204-BB1C-39AD167E0079}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankAccount", "..\..\..\..\Downloads\ACA-CSharp-homework06-master\ACA-CSharp-homework06-master\BankAccount.csproj", "{EB10721B-80B4-462D-BCB7-7030706471AE}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DepositCalculator", "DepositCalculator\DepositCalculator.csproj", "{EB794DD7-FFF9-43C4-8FA0-4DEA0F3B40DA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NugetTest", "NugetTest\NugetTest.csproj", "{A1716584-F77A-462D-A36E-B54484B3AD9F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankAccount", "BankAccount\BankAccount.csproj", "{CA59934E-BF1C-46F2-9EDB-AF8BFB351BDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,10 +65,6 @@ Global
 		{2BFF914F-0659-4390-992B-6ED9EAC1CE4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BFF914F-0659-4390-992B-6ED9EAC1CE4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BFF914F-0659-4390-992B-6ED9EAC1CE4A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EB10721B-80B4-462D-BCB7-7030706471AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB10721B-80B4-462D-BCB7-7030706471AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB10721B-80B4-462D-BCB7-7030706471AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB10721B-80B4-462D-BCB7-7030706471AE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EB794DD7-FFF9-43C4-8FA0-4DEA0F3B40DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EB794DD7-FFF9-43C4-8FA0-4DEA0F3B40DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB794DD7-FFF9-43C4-8FA0-4DEA0F3B40DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -77,14 +73,18 @@ Global
 		{A1716584-F77A-462D-A36E-B54484B3AD9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1716584-F77A-462D-A36E-B54484B3AD9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1716584-F77A-462D-A36E-B54484B3AD9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA59934E-BF1C-46F2-9EDB-AF8BFB351BDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA59934E-BF1C-46F2-9EDB-AF8BFB351BDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA59934E-BF1C-46F2-9EDB-AF8BFB351BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA59934E-BF1C-46F2-9EDB-AF8BFB351BDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{EB10721B-80B4-462D-BCB7-7030706471AE} = {6C9D96D2-1DFC-4204-BB1C-39AD167E0079}
 		{EB794DD7-FFF9-43C4-8FA0-4DEA0F3B40DA} = {6C9D96D2-1DFC-4204-BB1C-39AD167E0079}
 		{A1716584-F77A-462D-A36E-B54484B3AD9F} = {6C9D96D2-1DFC-4204-BB1C-39AD167E0079}
+		{CA59934E-BF1C-46F2-9EDB-AF8BFB351BDF} = {6C9D96D2-1DFC-4204-BB1C-39AD167E0079}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5EF37587-BFB0-44BE-AF99-DC4480A05514}
