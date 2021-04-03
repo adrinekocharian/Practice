@@ -10,6 +10,9 @@ namespace BankAccount
         {
             try
             {
+                int d = 0;
+                int a = 12 / d;
+
                 DepositAccount depositAccount = new DepositAccount(balance: 1000m, duration: 6);
                 depositAccount.DepositPaymenetType = DepositReturnType.Monthly;
 
@@ -19,7 +22,6 @@ namespace BankAccount
                 switch (depositAccount.DepositPaymenetType)
                 {
                     case DepositReturnType.Monthly:
-
                         break;
                     case DepositReturnType.Yearly:
                         break;
@@ -35,6 +37,9 @@ namespace BankAccount
 
                 BankAccount bankAccount = new BankAccount(1000);
                 bankAccount = new BankAccount(1000);
+
+                DepositTest(bankAccount);
+
                 bankAccount.Deposit(-100);
                 bankAccount.Withdraw(10000);
             }
@@ -69,8 +74,33 @@ namespace BankAccount
                     Console.WriteLine($"{de.Key} {de.Value}");
                 }
             }
+            catch (Exception ex)
+            {
+                //Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                
+            }
 
             Console.ReadLine();
+        }
+
+        public static void DepositTest(BankAccount ba)
+        {
+            try
+            {
+                ba.Deposit(-50);
+            }
+            catch (Exception ex)
+            {
+                //throw;
+                //throw ex;
+            }
+            finally
+            {
+
+            }
         }
     }
 }
