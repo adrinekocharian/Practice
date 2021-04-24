@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Practice7", "Practice7\Prac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Threads", "Threads\Threads.csproj", "{B4DC2127-6267-43E3-A9E5-6CFA286E0124}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Images", "ImageDownloader\Images.csproj", "{B0A8B7F9-DCAC-46C6-81F7-9A19C3C897F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Images", "ImageDownloader\Images.csproj", "{B0A8B7F9-DCAC-46C6-81F7-9A19C3C897F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

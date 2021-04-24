@@ -20,14 +20,14 @@ namespace PizzaShop
         }
         public static void TenPercentOffForMoreThanFiftyDollars(PizzaOrder order, ref decimal discount)
         {
-            //decimal discount = 0;
-            //decimal totalPrice = 0;
+            //decimal discount = 0m;
+            //decimal totalPrice = 0m;
             //foreach (Pizza pizza in order.Pizzas)
             //{
             //    totalPrice += pizza.Price;
             //}
 
-            //if (totalPrice >= 50)
+            //if (totalPrice >= 50m)
             //{
             //    discount = totalPrice * 0.1m;
             //}

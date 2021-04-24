@@ -10,7 +10,7 @@ namespace Practice6
         {
             DigitalBank bank = new DigitalBank();
 
-            bank.BankBalanceChangedEvent += Bank_BankBalanceChangedEvent;
+            bank.BankBalanceChangedEvent += BankBalanceChangedEvent1;
             //bank.BankBalanceLogger += Bank_BankLogger;
             bank.BankBalanceLogger += (sender, e) => Console.WriteLine($"***** Balance is changed. ***** \n {sender.GetType()}"); 
 
@@ -38,12 +38,7 @@ namespace Practice6
             Console.ReadLine();
         }
 
-        private static void Bank_BankLogger(object sender, EventArgs e)
-        {
-            Console.WriteLine("***** Balance is changed. *****");
-        }
-
-        private static void Bank_BankBalanceChangedEvent(object sender, BankEventArgs e)
+        private static void BankBalanceChangedEvent1(object sender, BankEventArgs e)
         {
             if (e.Value > 1000m)
             {
@@ -51,12 +46,9 @@ namespace Practice6
             }
         }
 
-        //private static void BankBalanceChangedEventHandler(object sender, EventArgs args)
-        //{
-        //    if (args.Value > 1000)
-        //    {
-        //        Console.WriteLine("Maximum amount is reached!");
-        //    }
-        //}
+        private static void Bank_BankLogger(object sender, EventArgs e)
+        {
+            Console.WriteLine("***** Balance is changed. *****");
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace Practice3
             Rectangle rect = new Rectangle(4, 5);
             Console.WriteLine($"The area of rectangle is {rect.CalculateArea()}");
 
-            Rectangle anotherRect;
+            Rectangle anotherRect = new Rectangle();
             anotherRect.height = 2;
             anotherRect.width = 3;
             anotherRect.topLeftPoint = new Point(0, 0);

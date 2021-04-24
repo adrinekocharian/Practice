@@ -30,9 +30,9 @@ namespace Practice6
                 }
 
                 this.balance = value;
-                this.BankBalanceChangedEvent(this, new BankEventArgs() { Value = value });
+                this.BankBalanceChangedEvent?.Invoke(this, new BankEventArgs() { Value = value });
                 //this.BankBalanceChangedEvent(this, EventArgs.Empty);
-                this.BankBalanceLogger(this, EventArgs.Empty);
+                this.BankBalanceLogger?.Invoke(this, EventArgs.Empty);
                 // For invoking an event you can also call Invoke method on a delegate 
                 //this.BankBalanceLogger.Invoke(this, EventArgs.Empty);
             }

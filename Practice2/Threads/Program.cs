@@ -33,11 +33,11 @@ namespace Threads
 
             for (int i = 0; i < 10; i++)
             {
-                //Thread thread = new Thread(_ => Console.Write(i));
-                //thread.Start();
-                //thread.Join();
+                Thread thread = new Thread(() => Console.Write(i));
+                thread.Start();
+                thread.Join();
                 int temp = i;
-                new Thread(_ => Console.Write(temp)).Start();
+                new Thread(() => Console.Write(temp)).Start();
             }
 
             Console.ReadLine();
@@ -49,7 +49,7 @@ namespace Threads
 
             #region lock
             Counter counter = new Counter();
-            Thread incThread = new Thread(_ =>
+            Thread incThread = new Thread(() =>
             {
                 for (int i = 0; i < 1000000; i++)
                 {
@@ -57,7 +57,7 @@ namespace Threads
                 }
             });
 
-            Thread decThread = new Thread(_ =>
+            Thread decThread = new Thread(() =>
             {
                 for (int i = 0; i < 1000000; i++)
                 {
