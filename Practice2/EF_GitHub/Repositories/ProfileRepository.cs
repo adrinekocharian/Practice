@@ -62,6 +62,12 @@ namespace EF_GitHub.Repository
 
         public UserProfile Update(UserProfile entity)
         {
+            // after updating corresponding entity
+
+            this.gitHubDbContext.Entry<UserProfile>(entity).State = EntityState.Modified;
+            this.gitHubDbContext.SaveChanges();
+            
+            // after that should return updated entity
             throw new NotImplementedException();
         }
     }
