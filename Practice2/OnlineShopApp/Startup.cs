@@ -67,6 +67,10 @@ namespace OnlineShopApp
 
             app.UseEndpoints(endpoints =>
             {
+                // If the convention is the same for different contorllers, then no need to 
+                // to add the same mapping convention for those controllers.
+                // So in this case no need to add separate convention for ProductController as
+                // it coincides with already defined default convention.
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
