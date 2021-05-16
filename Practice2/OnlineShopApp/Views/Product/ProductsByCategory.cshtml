@@ -1,0 +1,9 @@
+﻿@model IEnumerable<OnlineShopApp.Models.Product>
+
+<div class="text-center">
+    <h1 class="display-4">@ViewBag.SectionName</h1>
+    @foreach (var product in Model)
+    {
+        <partial name="_Product" model="product" />
+    }
+</div>

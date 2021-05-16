@@ -9,5 +9,7 @@ namespace OnlineShopApp.Models
     {
         IEnumerable<Product> GetAllProducts();
         Product GetProductById(int id);
+
+        void AddNewProduct(Product product);
     }
 }

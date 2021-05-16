@@ -12,30 +12,24 @@ namespace DAL
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
-        public DbSet<ShoppingCart> shoppingCarts { get; set; }
+        public DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public DbSet<Category> Categories { get; set; }
+        private string connectionString;
 
-        public ShopDbContext()
+        public ShopDbContext(string connString)
         {
+            this.connectionString = connString;
             //Database.EnsureDeleted();
             //Database.EnsureCreated();
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var configBuilder = new ConfigurationBuilder()
-               .SetBasePath(Directory.GetCurrentDirectory())
-               .AddJsonFile("appsettings.json")
-               .Build();
-
-            string connectionString = configBuilder.GetConnectionString("ShopDatabase");
-
-            optionsBuilder.UseSqlServer(connectionString);
-            
+            optionsBuilder.UseSqlServer(connectionString);            
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Product>()                
+            modelBuilder.Entity<Product>()
                 .Property(c => c.Category)
                 .HasConversion<string>();
 

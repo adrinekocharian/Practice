@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ProductViewModel>
+
+<div class="text-center">
+    @foreach (var category in Model)
+    {
+        <h1 class="bg-primary">@category.CurrentCategory</h1>
+        @foreach (var product in category.Products)
+        {
+            <partial name="_Product" model="product" />
+        }
+    }
+</div>

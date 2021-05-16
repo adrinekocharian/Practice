@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DAL.Entities;
+using DAL.Repositories;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections;
@@ -12,6 +13,16 @@ namespace Shop
 {
     class Program
     {
+        private static string connectionString;
+        static void SetConnectionString()
+        {
+            var configBuilder = new ConfigurationBuilder()
+               .SetBasePath(Directory.GetCurrentDirectory())
+               .AddJsonFile("appsettings.json")
+               .Build();
+
+            connectionString = configBuilder.GetConnectionString("ShopDatabase");
+        }
         static void Main(string[] args)
         {
             var configBuilder = new ConfigurationBuilder()
@@ -43,7 +54,7 @@ namespace Shop
                 Quantity = 50,
                 Category = ProductCategory.Dairy
             };
-            using (ShopDbContext dbContext = new ShopDbContext())
+            using (ShopDbContext dbContext = new ShopDbContext(connectionString))
             {
                 int prod_id = products.First(x => x.Price > 500).Id;
                 int itemsCount = 3;
@@ -76,7 +87,7 @@ namespace Shop
                     //TotalPrice = cartItems.Sum(p => p.Product.Price * p.Count)
                 };
 
-                dbContext.shoppingCarts.Add(shoppingCart);
+                dbContext.ShoppingCarts.Add(shoppingCart);
                 //dbContext.Products.First(x => x.Id == 2).Name = "x";
                 Console.Write(dbContext.Entry(shoppingCart).State);
 
@@ -87,19 +98,18 @@ namespace Shop
         static IEnumerable<Product> ReadProducts()
         {
             List<Product> products = new List<Product>();
-            using (ShopDbContext dbContext = new ShopDbContext())
+            using (ProductRepository productRepo = new ProductRepository(connectionString))
             {
-                products = dbContext.Products.ToList();
+                products = productRepo.GetAllProducts().ToList();
                 foreach (var item in products)
                 {
                     Console.WriteLine(item);
-                    Console.Write(dbContext.Entry(item).State);
                 }
-
-                var categoies = dbContext.Categories.ToList();
             }
+
             return products;
         }
+
         static void AddProducts()
         {
             var orange = new Product()
@@ -109,7 +119,7 @@ namespace Shop
                 Quantity = 1000,
                 Category = ProductCategory.Fruit
             };
-            var Cheese = new Product()
+            var cheese = new Product()
             {
                 Name = "cheese",
                 Price = 1600,
@@ -130,14 +140,13 @@ namespace Shop
                 Quantity = 700,
                 Category = ProductCategory.Fruit
             };
-            using (ShopDbContext dbContext = new ShopDbContext())
-            {
-                dbContext.Products.Add(orange);
-                dbContext.Products.Add(candy);
-                dbContext.Products.Add(apple);
-                dbContext.Products.Add(Cheese);
 
-                dbContext.SaveChanges(); 
+            using (ProductRepository productRepo = new ProductRepository(connectionString))
+            {
+                productRepo.Create(orange);
+                productRepo.Create(apple);
+                productRepo.Create(candy);
+                productRepo.Create(cheese);
             }
         }
     }

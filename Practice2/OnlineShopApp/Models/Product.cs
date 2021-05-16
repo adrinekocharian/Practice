@@ -17,5 +17,7 @@ namespace OnlineShopApp.Models
         public decimal Price { get; set; }
         public ProductCategory Category { get; set; }
 
+        public string ImageUrl => $"{Name.ToLower()}.jpg";
+
     }
 }

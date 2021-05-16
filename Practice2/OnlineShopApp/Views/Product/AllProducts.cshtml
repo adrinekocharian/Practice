@@ -1,9 +1,20 @@
-﻿@{
+﻿@*@{
     ViewData["Title"] = "Product Page";
-}
+}*@
+@model IEnumerable<OnlineShopApp.Models.Product> 
 
 <div class="text-center">
-    <h1 class="display-4">Products</h1>
-    
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-3">@ViewData["Title"]</h1>
+    <h1 class="display-4">@ViewBag.SectionName</h1>
+    @foreach (var product in Model)
+    {
+
+        <label asp-for="@product.Name">
+            <div>
+
+            </div>
+        </label>
+        <partial name="_Product" model="product" />
+    }
+    <button action="save" asp-controller="Product" asp-action="Save" data="@Model"></button>
 </div>

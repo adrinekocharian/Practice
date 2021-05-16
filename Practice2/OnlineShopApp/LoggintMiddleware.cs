@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OnlineShopApp
 {
-    public static class LoggintMiddlewareExtension
+    public static class LoggingMiddlewareExtension
     {
         public static void UseLoggintMiddleware(this IApplicationBuilder appBuilder)
         {

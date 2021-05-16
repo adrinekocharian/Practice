@@ -2,37 +2,31 @@
 using OnlineShopApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace OnlineShopApp.Controllers
 {
-    [ApiController]
-    [Route("{controller}")]
     public class ProductController : Controller
     {
         private readonly IProductRepository productRepo;
-        private readonly IEnumerable<IProductRepository> productRepos;
-        private readonly ICategoryRepository categoryRepo;
-        public ProductController(IProductRepository productRepository/*IEnumerable<IProductRepository> productRepository*/)
+        public ProductController(IProductRepository productRepository)
         {
-            //productRepos = productRepository;
-            //var p1 = productRepos.First().GetAllProducts();
-            //var p2 = productRepos.Last().GetAllProducts();
-
             this.productRepo = productRepository;
         }
-
-        [HttpGet]
-        public IActionResult AllProducts()
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public ViewResult AllProducts()
         {
             var products = this.productRepo.GetAllProducts();
-            //return View(products);
-            return Ok(products);
+            ViewBag.SectionName = "All Products";
+            ViewData["Title"] = "Product Page";
+            return View(products);
         }
 
-        [HttpGet]
-        [Route("{id}")]
         public IActionResult ProductById(int id)
         {
             var product = this.productRepo.GetProductById(id);
@@ -40,34 +34,42 @@ namespace OnlineShopApp.Controllers
             if (product == null)
                 return NotFound();
 
-            return Ok(product);
+            return View(product);
         }
 
-        // Prodcut/GetById?id=2
-        [HttpGet]
-        [Route("GetById")]
-        public IActionResult ProductbyIdFromQuery([FromQuery] int id)
+        public IActionResult ProductsByCategory([FromQuery] string category)
         {
-            var product = this.productRepo.GetProductById(id);
+            if (string.IsNullOrEmpty(category))
+            {
+                throw new Exception("some error");
+                //return RedirectToAction(nameof(Error));
+            }
 
-            if (product == null)
-                return NotFound();
-
-            return Ok(product);
+            var products = this.productRepo.GetAllProducts();
+            var productsByCategory = products.Where(x => x.Category.ToString() == category);
+            ViewBag.SectionName = $"{category}";
+            return View(productsByCategory);
         }
 
-        // localhost:5005/Categories
-        [HttpGet("/Categories")]
-        public IActionResult AllCategories([FromServices] ICategoryRepository categoryRepository)
+        public IActionResult Categories()
         {
-            return Ok(categoryRepository.Categories);
+            var products = this.productRepo.GetAllProducts();
+            var groupProducts = products.GroupBy(x => x.Category).ToList();
+            List<ProductViewModel> categories = new List<ProductViewModel>();
+            foreach (var group in groupProducts)
+            {
+                categories.Add(new ProductViewModel()
+                {
+                    CurrentCategory = group.Key,
+                    Products = group
+                });
+            }
+            return View(categories);
         }
 
-        [HttpGet("Categories")]
-        public IActionResult GetAllCategories()
+        public IActionResult Error()
         {
-            var categoryRepository = (CategoryRepository)HttpContext.RequestServices.GetService(typeof(ICategoryRepository));
-            return Ok(categoryRepository.Categories);
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

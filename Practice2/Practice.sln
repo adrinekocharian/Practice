@@ -43,9 +43,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop", "Shop\Shop.csproj", "{0368EE84-6228-4AB6-9059-14FE586B7D0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI", "DI\DI.csproj", "{6D5ADA03-61E0-49F7-999D-FB11A6D9C040}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DI", "DI\DI.csproj", "{6D5ADA03-61E0-49F7-999D-FB11A6D9C040}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShopApp", "OnlineShopApp\OnlineShopApp.csproj", "{C3791448-C91C-4EBD-9ABC-4AD38BF85610}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineShopApp", "OnlineShopApp\OnlineShopApp.csproj", "{C3791448-C91C-4EBD-9ABC-4AD38BF85610}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWPFApp", "MyWPFApp\MyWPFApp.csproj", "{A7684235-C810-4C2B-BB07-91C8A1C68DDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -133,6 +135,10 @@ Global
 		{C3791448-C91C-4EBD-9ABC-4AD38BF85610}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3791448-C91C-4EBD-9ABC-4AD38BF85610}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3791448-C91C-4EBD-9ABC-4AD38BF85610}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7684235-C810-4C2B-BB07-91C8A1C68DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7684235-C810-4C2B-BB07-91C8A1C68DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7684235-C810-4C2B-BB07-91C8A1C68DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7684235-C810-4C2B-BB07-91C8A1C68DDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

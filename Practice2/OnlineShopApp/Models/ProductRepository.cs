@@ -12,6 +12,13 @@ namespace OnlineShopApp.Models
         {
             this.dbContext = dbContext;
         }
+
+        public void AddNewProduct(Product product)
+        {
+            this.dbContext.Products.Add(product);
+            this.dbContext.SaveChanges();
+        }
+
         public IEnumerable<Product> GetAllProducts()
         {
             return this.dbContext.Products;

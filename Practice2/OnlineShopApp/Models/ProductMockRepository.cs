@@ -7,6 +7,11 @@ namespace OnlineShopApp.Models
 {
     public class ProductMockRepository : IProductRepository
     {
+        public void AddNewProduct(Product product)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Product> GetAllProducts()
         {
             return new List<Product>
